@@ -5,14 +5,10 @@
 */
 package com.portfolio.alca.Security.Controller;
 
-/**
- *
- * @author Usuario
- */
 public class Mensaje {
     private String mensaje;
     
-    //Constructores
+    //Constructor
 
     public Mensaje() {
     }
@@ -20,8 +16,7 @@ public class Mensaje {
     public Mensaje(String mensaje) {
         this.mensaje = mensaje;
     }
-    
-    //Getter and Setters
+    //Getter y Setter
 
     public String getMensaje() {
         return mensaje;
@@ -30,6 +25,4 @@ public class Mensaje {
     public void setMensaje(String mensaje) {
         this.mensaje = mensaje;
     }
-    
-    
 }
