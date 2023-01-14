@@ -89,9 +89,6 @@ public class CHys {
         //    return new ResponseEntity(new Mensaje("Esa skill ya existe"), HttpStatus.BAD_REQUEST);
         //}
         //No puede estar vacio
-        if (NumberUtils.isCreatable(String.valueOf(dtohys.getPorcentaje()))) {
-            return new ResponseEntity(new Mensaje("El porcentaje es obligatorio"), HttpStatus.BAD_REQUEST);
-        }
         if (StringUtils.isBlank(dtohys.getSubtitle())) {
             return new ResponseEntity(new Mensaje("El subtitulo es obligatorio"), HttpStatus.BAD_REQUEST);
         }
