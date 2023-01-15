@@ -17,15 +17,20 @@ public class Educacion {
     private String nombreE;
     private String descripcionE;
     private String desdehastaE;
+    
+    //Constructores
 
     public Educacion() {
     }
 
     public Educacion(String nombreE, String descripcionE, String desdehastaE) {
+        this.id = id;
         this.nombreE = nombreE;
         this.descripcionE = descripcionE;
         this.desdehastaE = desdehastaE;
     }
+    
+    //Getters & setters
 
     public int getId() {
         return id;
