@@ -17,6 +17,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,23 +54,23 @@ public class CPersona {
         return new ResponseEntity(new Mensaje("producto eliminado"), HttpStatus.OK);
     }*/
 
-    /*@PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody dtoExperiencia dtoexp){      
-        if(StringUtils.isBlank(dtoexp.getNombreE())){
+    public ResponseEntity<?> create(@RequestBody dtoPersona dtopersona){      
+        if(StringUtils.isBlank(dtopersona.getNombre())){
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
         //if(sExperiencia.existsByNombreE(dtoexp.getNombreE())){
         //    return new ResponseEntity(new Mensaje("Esa experiencia ya existe"), HttpStatus.BAD_REQUEST);
         //}
-        if(StringUtils.isBlank(dtoexp.getDesdehastaE())){
-            return new ResponseEntity(new Mensaje("La fecha es obligatoria"), HttpStatus.BAD_REQUEST);
-        }
-        Experiencia experiencia = new Experiencia (dtoexp.getNombreE(),dtoexp.getDescripcionE(), dtoexp.getDesdehastaE());        
-        sExperiencia.save(experiencia);
+        //if(StringUtils.isBlank(dtopersona.getDesdehastaE())){
+        //    return new ResponseEntity(new Mensaje("La fecha es obligatoria"), HttpStatus.BAD_REQUEST);
+        //}
+        Persona persona = new Persona (dtopersona.getNombre(),dtopersona.getDescripcion(), dtopersona.getApellido(), dtopersona.getImg());        
+        sPersona.save(persona);
         
         return new ResponseEntity(new Mensaje("Experiencia agregada"), HttpStatus.OK);
-    }*/
+    }
     
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update/{id}")
