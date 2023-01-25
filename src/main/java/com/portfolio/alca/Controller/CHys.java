@@ -10,7 +10,6 @@ import com.portfolio.alca.Security.Controller.Mensaje;
 import com.portfolio.alca.Service.Shys;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +25,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"https://frontend---prueba.web.app","http://localhost:4200"})
 @RequestMapping("/skill")
 public class CHys {
 
@@ -89,9 +88,6 @@ public class CHys {
         //    return new ResponseEntity(new Mensaje("Esa skill ya existe"), HttpStatus.BAD_REQUEST);
         //}
         //No puede estar vacio
-        if (NumberUtils.isCreatable(String.valueOf(dtohys.getPorcentaje()))) {
-            return new ResponseEntity(new Mensaje("El porcentaje es obligatorio"), HttpStatus.BAD_REQUEST);
-        }
         if (StringUtils.isBlank(dtohys.getSubtitle())) {
             return new ResponseEntity(new Mensaje("El subtitulo es obligatorio"), HttpStatus.BAD_REQUEST);
         }
