@@ -35,7 +35,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = {"https://frontend---prueba.web.app", "http://localhost:4200", "https://my-portfolio-web-alca-alejo.web.app/"})
+@CrossOrigin(origins = {"https://frontend---prueba.web.app", "http://localhost:4200", "https://my-portfolio-web-alca-alejo.web.app"})
 public class AuthController {
     @Autowired
     PasswordEncoder passwordEncoder;
