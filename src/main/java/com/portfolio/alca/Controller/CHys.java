@@ -31,6 +31,7 @@ public class CHys {
 
     @Autowired
     Shys shys;
+    
     @GetMapping("/lista")
     public ResponseEntity<List<hys>> list() {
         List<hys> list = shys.list();
@@ -53,7 +54,7 @@ public class CHys {
             return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
         }
         shys.delete(id);
-        return new ResponseEntity(new Mensaje("Skill eliminado"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Skill eliminada"), HttpStatus.OK);
     }
 
     @PreAuthorize("hasRole('ADMIN')")
